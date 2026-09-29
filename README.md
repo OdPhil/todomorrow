@@ -10,9 +10,9 @@ Open `http://127.0.0.1:8080`. Python is an optional development convenience, not
 
 ## Features
 
-- Tasks: add, edit in place, delete with confirmation, complete, filter, search, set priority, and reorder. Drag the ⠿ handle, press ↑/↓ while it is focused, or click it for move buttons. Order persists across refreshes and JSON backups. With search or filters active, only visible tasks move; hidden tasks keep their slots.
+- Tasks: add, edit in place, delete with confirmation, complete, filter, search, set priority, and reorder. **Drag and drop the ⠿ handle beside a task to reorder it.** Optional accessible controls: click the handle to reveal **Move up / Move down** buttons, or focus it with Tab and press the keyboard’s **Arrow Up / Arrow Down** keys. The move buttons are hidden until you click the handle. Order persists across refreshes and JSON backups. With search or filters active, only visible tasks move; hidden tasks keep their slots.
 - Notes: standalone scratchpads with explicit saving, title/body search, bold/italic/headings/lists, and a safe formatted preview. Raw HTML is displayed as text.
-- Focus: task-linked Pomodoro timer with configurable focus/break durations, pause/resume/reset, and persistent deadlines. Choose Short break when a focus session finishes.
+- Focus: task-linked Pomodoro timer with configurable focus/break durations under **Durations**, pause/resume/reset, and persistent deadlines. Choose Short break when a focus session finishes.
 - Backup: JSON export and schema-validated replacement import with confirmation.
 - Light/dark themes, responsive navigation, labeled controls, visible keyboard focus, and reduced-motion support.
 
@@ -43,7 +43,7 @@ These steps follow [Netlify's Drop quickstart](https://docs.netlify.com/start/qu
 
 ### Quick live checks before submission
 
-- Open the HTTPS URL in a fresh/private window and on your phone; verify Tasks, Notes, Focus Timer, and theme switching.
+- Open the HTTPS URL in a fresh/private window and on your phone; verify Tasks, Notes, Focus, and theme switching.
 - Add and edit a task, set its priority, complete it, filter/search, and confirm deletion on disposable test data.
 - Save a formatted note, preview it, search it, then refresh and confirm it remains.
 - Link a task to the timer, start/pause/resume it, refresh, and confirm the deadline continues.
@@ -55,9 +55,6 @@ No live deployment is performed by generating these files. The public submission
 
 ## Verification performed
 
-The minimalist update removes decorative copy, statistic cards, and the sidebar while preserving all tools. Timer durations and self-tests are available in expandable sections. Three additional tests cover order persistence/export, filtered movement, and rollback on storage failure.
+The current app passed **18/18** embedded tests in the Codex in-app browser on 2026-09-29. JavaScript syntax validation passed. Browser checks covered task creation/editing/completion, filtering/search, pointer drag-to-reorder, keyboard and click-to-move alternatives, order persistence after refresh, notes saving/formatting, and timer start/pause/refresh. Desktop, 390 px, and 320 px layouts and dark mode were checked; no captured console errors or horizontal overflow appeared.
 
-
-On 2026-09-29, the integrated suite passed **15/15** in the Codex in-app browser. JavaScript syntax validation passed. Browser checks covered task creation/editing/completion, status filtering and search, saved notes and safe formatted preview, task-linked timer persistence across refresh, theme switching, and desktop/390 px/320 px layouts. No captured console errors or horizontal overflow appeared. Live Netlify deployment, a full screen-reader/contrast audit, cross-browser coverage, and file-picker download/import round trips remain manual release checks; import/export schema round trips are covered by the embedded tests.
-
-Minimalist update verification: **18/18** embedded tests passed. Actual pointer dragging, keyboard Arrow Up, click-to-move, and order persistence after reload were verified in the browser. Notes formatting/save and timer start/pause/refresh were rechecked, with 390 px and 320 px layouts and dark mode. No captured console errors or horizontal overflow appeared. Physical touchscreen gestures and a full accessibility audit remain unverified.
+Live Netlify deployment, physical touchscreen gestures, full screen-reader/contrast auditing, cross-browser coverage, and file-picker download/import round trips remain manual release checks. Import/export schema round trips and reordering persistence are covered by the embedded tests.
